@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Psquared_DisableRoutes>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Psquared_DisableRoutes>
+    </modules>
+</config>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Psquared_DisableRoutes>
+            <version>0.2.1</version>
+        </Psquared_DisableRoutes>
+    </modules>
+    <global>
+        <models>
+            <disableroutes>
+                <class>Psquared_DisableRoutes_Model</class>
+            </disableroutes>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <disableroutes>
+                        <class>Psquared_DisableRoutes_Model_Observer</class>
+                        <method>checkRoute</method>
+                    </disableroutes>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </frontend>
+    <default>
+        <web>
+            <disable_routes>
+                <disable_routes>1</disable_routes>
+                <!--
+                Disables:
+                catalogsearch/term/popular
+                catalog/seo_sitemap/category
+                tag/list
+                -->
+                <routes><![CDATA[#catalogsearch\/(term\/popular|advanced)|catalog\/seo_sitemap\/category|tag\/list#]]></routes>
+            </disable_routes>
+        </web>
+    </default>
+</config>
